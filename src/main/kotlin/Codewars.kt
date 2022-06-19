@@ -1,12 +1,11 @@
 fun main(args:Array<String>){
-    println(getMiddle("test"))
-    println(getMiddle("middle"))
-    println(getMiddle("A"))
-    println(getMiddle("dre"))
+ println(highAndLow("8 3 -5 42 -1 0 0 -9 4 7 4 -4"))
 }
 
-fun getMiddle(word:String):String{
-    val length: Int = word.length
-    val half: Int = length/2
-    return if(length%2 == 0)word.substring(half-1, half+1) else word[half].toString()
+fun highAndLow(numbers:String): String {
+    val numbersToList =  numbers.split(" ")
+    val numbersList = numbersToList.map { it.toInt() }
+    val HighestNum = numbersList.maxByOrNull { it }
+    val LowestNumber = numbersList.minByOrNull { it }
+    return HighestNum.toString() +" "+ LowestNumber.toString()
 }
